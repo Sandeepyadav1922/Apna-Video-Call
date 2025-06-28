@@ -1,0 +1,136 @@
+.meetVideoContainer {
+    position: relative;
+    height: 100vh;
+    background: rgb(1, 4, 48);
+}
+
+.meetUserVideo {
+    position: absolute;
+    bottom: 10vh;
+    height: 20vh;
+    width: auto;
+    left: 0;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+.buttonContainers {
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+    text-align: center;
+}
+
+.buttonContainers svg {
+    font-size: 3rem;
+}
+
+.conferenceView {
+
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+
+.conferenceView  video {
+    width: 40vw;
+    height: 40vh;
+    min-width: 30vw;
+    border-radius: 10px;
+}
+
+.chatRoom {
+    position: absolute;
+    height: 90vh;
+    right: 0;
+    background: white;
+    border-radius: 10px;
+    width: 30vw;
+    padding-inline: 20px;
+
+}
+
+.chattingDisplay {
+  max-height: 250px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.chatContainer {
+    position: relative;
+    height: 100%;
+}
+
+
+.chattingArea {
+    position: absolute;
+    bottom: 0;
+}
+
+
+@media (max-width: 480px) {
+  .buttonContainers {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .chatRoom {
+    min-width: 100vw;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .chattingArea {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .chatContainer h1 {
+    font-size: 1.2rem;
+  }
+
+  .conferenceView {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .meetUserVideo {
+    margin-top: 1rem;
+    max-width: 100%;
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .chatRoom {
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .buttonContainers {
+    justify-content: space-between;
+  }
+
+  .conferenceView {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .meetVideoContainer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .chatRoom {
+    max-width: 350px;
+    margin: 0;
+  }
+
+  .conferenceView {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
