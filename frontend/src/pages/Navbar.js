@@ -15,7 +15,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const navItems = [
-    { label: "Join as Guest", path: "/aljk23" },
+    { label: "Join as Guest", path: "/home" },
     { label: "Register", path: "/auth" },
     { label: "Login", path: "/auth" },
 ];
