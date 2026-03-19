@@ -1,6 +1,7 @@
+import dotenv from 'dotenv';
 import express from "express";
 import { createServer } from "node:http";
-
+dotenv.config();
 
 import mongoose from "mongoose";
 import { connectToSocket } from "./controllers/socketManager.js";
@@ -11,9 +12,15 @@ import userRoutes from "./routes/users.routes.js";
 const app = express();
 const server = createServer(app);
 const io = connectToSocket(server);
+const MONGO_URL = process.env.MONGO_URL
 
 app.set("port", (process.env.PORT || 8000));
-app.use(cors());
+app.use(cors({
+    origin: [
+        "https://apnacollegezoomfrontend-vdq1.onrender.com",
+        "http://localhost:3000/"
+    ]
+}));
 app.use(express.json({limit: "40kb"}));
 app.use(express.urlencoded({ limit: "40kb", extended: true }));
 
@@ -25,9 +32,9 @@ app.get("/home", (req, res) => {
 
 const start = async () => {
     app.set("mongo_user")
-    const connectionDb = await mongoose.connect("mongodb+srv://sandeepyada234abc:QseXXkyh3siAVm37@cluster0.64z87pr.mongodb.net/")
+    const connectionDb = await mongoose.connect(MONGO_URL);
 
-    console.log(`MONGO Connected DB Host: ${connectionDb.connection.host}`);
+    console.log("Connected to mongoDB");
     server.listen(app.get("port"), () => {
         console.log("listing on port 8000")
     });

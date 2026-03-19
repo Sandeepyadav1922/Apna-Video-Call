@@ -111,6 +111,26 @@
   background: url("/public/login1.webp");
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media(max-width: 500px) {
+  .authContainer {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+  }
+}
+
+.grid-container {
+  height: 70vh;
+  border-radius: 0.5rem;
+}
+
+.grid-container:hover {
+  transform: scale(1.004);
 }
 
 .lobby-container {
@@ -155,5 +175,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
 }
+
+.videoview {
+  height: 100%;
+  width: 100%;
+}
+
+/* .main-vedio {
+  height: 200px;
+  width: 400px;
+} */

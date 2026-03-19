@@ -31,7 +31,6 @@ const login = async(req, res) => {
 
     } catch(e) {
         return res.status(500).json({message: `something went wrong ${e}`})
-
     }
 }
 

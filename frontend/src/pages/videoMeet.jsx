@@ -13,12 +13,10 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { io } from "socket.io-client";
 import "../App.css";
-import server from '../environment';
+// import server from '../environment';
 import styles from "../styles/videoComponent.module.css";
 
-
-
-const server_url = server;
+const server_url = process.env.REACT_APP_API_URL;
 
 var connections = {};
 
@@ -45,7 +43,7 @@ export default function VideoMeetComponent() {
 
     let [screen, setScreen] = useState();
 
-    let [showModal, setShowModal] =  useState(true);
+    let [showModal, setShowModal] =  useState(false);
 
     let [screenAvailable, setScreenAvailable] = useState();
 
@@ -472,8 +470,8 @@ let connect = () => {
                             </div>
 
                             <div className={styles.chattingArea}>
-                                <TextField value={message} onChange={(e) => setMessage(e.target.value)} id="outlined-basic" label="Enter Your chat" variant="outlined" />
-                                <Button variant='contained' onClick={sendMessage}>Send</Button>
+                                <TextField value={message} onChange={(e) => setMessage(e.target.value)} id="outlined-basic" label="Enter Your chat" variant="outlined" />&nbsp;
+                                <Button variant='contained' onClick={sendMessage} style={{marginTop: "8px"}}>Send</Button>
                             </div>
 
 
@@ -511,7 +509,6 @@ let connect = () => {
                         {videos.map((video) => (
                             <div key={video.socketId}>
                                 <video
-
                                     data-socket={video.socketId}
                                     ref={ref => {
                                         if (ref && video.stream) {

@@ -51,7 +51,7 @@ return (
     <AppBar position="static" sx={{ backgroundColor: "#1a1a1a" }}>
         <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            Apna Video Call
+            Video Confrecing App
             </Typography>
             <Box sx={{ display: { xs: "none", md: "block" } }}>
             {navItems.map((item) => (

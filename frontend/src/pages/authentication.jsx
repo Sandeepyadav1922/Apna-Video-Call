@@ -66,7 +66,7 @@ return (
             sm={4}
             md={7}
             sx={{
-                backgroundImage: 'url(https://images.unsplash.com/photo-1506744038136-46273834b3fb)',
+            backgroundImage: 'url(https://images.unsplash.com/photo-1506744038136-46273834b3fb)',
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -75,7 +75,7 @@ return (
         }}
         />
         
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square >
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square className='grid-container'>
         <Box
             sx={{
                 my: 8,
@@ -157,8 +157,6 @@ return (
                 autoHideDuration={4000}
                 message={message}
             />
-
-
     </ThemeProvider>
 );
 }
