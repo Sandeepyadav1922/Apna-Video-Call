@@ -12,7 +12,6 @@ import userRoutes from "./routes/users.routes.js";
 const app = express();
 const server = createServer(app);
 const io = connectToSocket(server);
-const MONGO_URL = process.env.MONGO_URL
 
 app.set("port", (process.env.PORT || 8000));
 app.use(cors({
@@ -32,7 +31,7 @@ app.get("/home", (req, res) => {
 
 const start = async () => {
     app.set("mongo_user")
-    const connectionDb = await mongoose.connect(MONGO_URL);
+    const connectionDb = await mongoose.connect(process.env.MONGO_URL);
 
     console.log("Connected to mongoDB");
     server.listen(app.get("port"), () => {
